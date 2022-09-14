@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+    <script src="baii1.js"></script>
+</head>
+<style>
+    canvas {
+        margin-left: 150px;
+    }
+</style>
+<canvas id="hinhChuNhat" width="1000" height="580" style="border: 10px solid deeppink"></canvas>
+<br>
+<body>
+<script>
+
+
+    let hinhChuNhat = new hinhChuNhat1(+prompt('nhap chieu dai'), +prompt('nhap chieu rong'))
+    let chieuDai = hinhChuNhat.getWidth()
+    let chieuRong = hinhChuNhat.getHeight()
+    let chuVi = hinhChuNhat.getCv()
+    let dienTich = hinhChuNhat.getDt()
+    // document.write('dien tich hinh chu nhat la:', dienTich, '<br>')
+    // document.write('chu vi hinh chu nhat la:', chuVi)
+
+    let canvas = document.getElementById('hinhChuNhat');
+    let ctx = canvas.getContext('2d');
+
+    ctx.beginPath()
+    ctx.strokeRect(50, 50, hinhChuNhat.getWidth(), hinhChuNhat.getHeight())
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.font = '20px Arial Black'
+    ctx.fillStyle = 'blue'
+    ctx.fillText('chieu dai cua hinh chu nhat la:' + chieuDai, 20, 500)
+    ctx.fillText('chieu rong cua hinh chu nhat la:' + chieuRong, 20 , 520)
+    ctx.fillText('dien tich hinh chu nhat la la:' + dienTich, 20, 540)
+    ctx.fillText('chu vi hinh chu nhat la:' + chuVi, 20, 560)
+    ctx.fill()
+    ctx.closePath()
+
+
+</script>
+</body>
+</html>
